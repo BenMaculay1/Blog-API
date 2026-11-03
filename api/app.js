@@ -3,8 +3,14 @@ const express = require('express')
 const app = express()
 const path = require('node:path')
 const postsRouter = require('./routes/postsRouter')
+const signUpRouter = require('./routes/signUpRouter')
+const logInRouter = require('./routes/logInRouter')
+
+app.use(express.json())
 
 app.use('/posts', postsRouter)
+app.use('/signup', signUpRouter)
+app.use('/login', logInRouter)
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
