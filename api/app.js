@@ -1,3 +1,4 @@
+const cors = require('cors')
 require('dotenv').config()
 const express = require('express')
 const app = express()
@@ -7,6 +8,7 @@ const signUpRouter = require('./routes/signUpRouter')
 const logInRouter = require('./routes/logInRouter')
 
 app.use(express.json())
+app.use(cors())
 
 app.use('/posts', postsRouter)
 app.use('/signup', signUpRouter)
