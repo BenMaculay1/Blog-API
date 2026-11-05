@@ -2,7 +2,7 @@ const prisma = require('./prisma')
 
 const getPosts = async () => {
     return await prisma.posts.findMany({
-        select: { id: true, title: true, content: true }
+        select: { id: true, title: true, content: true, users: { select: { username: true }} }
     })
 }
 
@@ -16,8 +16,14 @@ const getUser = async (username) => {
     return await prisma.users.findUnique({where: {username}})
 }
 
+const getComments = async (post_id) => {
+    return await prisma.comments.findMany({where: {post_id},
+        select: {id: true, user_id: true, content: true}})
+}
+
 module.exports = {
     getPosts,
     createUser,
-    getUser
+    getUser,
+    getComments
 }

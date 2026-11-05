@@ -1,3 +1,4 @@
+const jwt = require("jsonwebtoken")
 const bcrypt = require("bcryptjs")
 const db = require('../db/queries')
 
@@ -18,7 +19,8 @@ const logInPost = async (req, res) => {
     if (!match) {
         return res.status(401).json({ message: "Invalid username or password"})
     }
-    res.json("Logged in")
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET)
+    res.json({ message: "Logged in", token })
 }
 
 module.exports = {
