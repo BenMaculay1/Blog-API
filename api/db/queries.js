@@ -27,10 +27,17 @@ const insertBlog = async (user_id, title, content) => {
     })
 }
 
+const insertComment = async (user_id, post_id, content) => {
+    return await prisma.comments.create({
+        data: { user_id, post_id, content }
+    })
+}
+
 module.exports = {
     getPosts,
     createUser,
     getUser,
     getComments,
-    insertBlog
+    insertBlog,
+    insertComment
 }

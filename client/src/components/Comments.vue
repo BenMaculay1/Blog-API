@@ -16,4 +16,5 @@ onMounted(async () => {
       {{ comment.content }}
     </li>
   </ul>
+  <router-link :to="`/posts/${route.params.post_id}/comments/new`">Add comment</router-link>
 </template>

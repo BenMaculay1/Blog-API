@@ -5,6 +5,7 @@ import SignUp from "@/components/SignUp.vue";
 import HomePage from "@/components/HomePage.vue";
 import Comments from "@/components/Comments.vue";
 import newPost from '../components/newPost.vue'
+import newComment from '../components/newComment.vue'
 
 const routes = [
     {
@@ -30,6 +31,10 @@ const routes = [
     {
         path: '/posts/new',
         component: newPost
+    },
+    {
+        path: '/posts/:post_id/comments/new',
+        component: newComment
     }
 ]
 

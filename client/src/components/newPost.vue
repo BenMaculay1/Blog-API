@@ -20,7 +20,16 @@ const handleNewPost = async () => {
     <label for="title">Title</label>
     <input v-model="title" type="text" name="title" id="title">
     <label for="content">Content</label>
-    <input v-model="content" type="text" name="content" id="content">
+    <textarea v-model="content" type="text" name="content" id="content" rows="6"></textarea>
     <button type="submit">Add new post</button>
   </form>
 </template>
+
+<style scoped>
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+}
+</style>
