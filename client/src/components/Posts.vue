@@ -8,7 +8,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <router-link to="/homepage">Log out</router-link>
+  <router-link to="/homepage">Log out</router-link><br>
+  <router-link to="/posts/new">Add post</router-link>
   <ul>
     <li v-for="post in posts" :key="post.id">
       <h2>{{ post.title }}</h2>

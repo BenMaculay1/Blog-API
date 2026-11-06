@@ -5,6 +5,13 @@ const showPosts = async (req, res) => {
     res.json(posts)
 }
 
+const addNewBlogPost = async (req, res) => {
+    const { title, content } = req.body
+    await db.insertBlog(req.user.id, title, content)
+    res.status(201).json()
+}
+
 module.exports = {
-    showPosts
+    showPosts,
+    addNewBlogPost
 }

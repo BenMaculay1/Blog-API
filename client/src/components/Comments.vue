@@ -10,7 +10,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <router-link to="/">Back</router-link>
+  <router-link to="/posts">Back</router-link>
   <ul>
     <li v-for="comment in comments" :key="comment.id">
       {{ comment.content }}

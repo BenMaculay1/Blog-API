@@ -14,7 +14,7 @@ const handleMethod = async () => {
     return
   }
   localStorage.setItem("token", data.token)
-  router.push('/')
+  router.push('/posts')
 }
 </script>
 
